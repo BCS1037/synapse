@@ -1,3 +1,5 @@
+[中文版](https://mp.weixin.qq.com/s/XuCHojt0qE-q5fjl--JnCw)
+
 # synapse
 A simple Zotero plugin for exporting item metadata to Obsidian notes.
 
