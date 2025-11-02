@@ -59,7 +59,7 @@ doi: {{ DOI }}
 
 ## License
 
-- Licensed under `MIT License`.
+- Licensed under `GNU AFFERO GENERAL PUBLIC LICENSE`.
 
 ## Acknowledgements
 
