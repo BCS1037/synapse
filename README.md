@@ -63,5 +63,5 @@ doi: {{ DOI }}
 
 ## Acknowledgements
 
-- Built on `[zotero-plugin-template](https://github.com/windingwind/zotero-plugin-template)`.
+- Built on [zotero-plugin-template](https://github.com/windingwind/zotero-plugin-template).
 - Thanks to the community for early [Mdnotes](https://github.com/argenos/zotero-mdnotes) explorations and template syntax contributions.
