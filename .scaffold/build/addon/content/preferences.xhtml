@@ -1,0 +1,189 @@
+<linkset>
+  <html:link rel="localization" href="synapse-preferences.ftl" />
+  <!-- Added stylesheet link for external preview; 在外部预览环境下加载本地样式表 -->
+  <html:link rel="stylesheet" href="zoteroPane.css" />
+</linkset>
+<groupbox
+  onload="Zotero.Synapse.hooks.onPrefsEvent('load', { window });"
+>
+  <label><html:h2 data-l10n-id="synapse-pref-title"></html:h2></label>
+
+  <!-- Directory & templates / 导出目录与模板 -->
+  <hbox align="center" pack="start">
+    <html:label
+      for="zotero-prefpane-synapse-directory"
+      data-l10n-id="synapse-pref-directory"
+    ></html:label>
+    <html:input
+      type="text"
+      id="zotero-prefpane-synapse-directory"
+      preference="extensions.synapse.directory"
+      flex="1"
+    ></html:input>
+    <button
+      id="zotero-prefpane-synapse-choose-dir"
+      data-l10n-id="synapse-pref-choose-dir"
+    />
+  </hbox>
+  <hbox align="center" pack="start">
+    <html:label
+      for="zotero-prefpane-synapse-templates-dir"
+      data-l10n-id="synapse-pref-templates-directory"
+    ></html:label>
+    <html:input
+      type="text"
+      id="zotero-prefpane-synapse-templates-dir"
+      preference="extensions.synapse.templates.directory"
+      flex="1"
+    ></html:input>
+    <button
+      id="zotero-prefpane-synapse-choose-templates-dir"
+      data-l10n-id="synapse-pref-choose-dir"
+    />
+  </hbox>
+
+  <!-- Template file names / 模板文件名设置 -->
+  <hbox align="center" pack="start">
+    <html:label
+      for="zotero-prefpane-synapse-template-default"
+      data-l10n-id="synapse-pref-template-default"
+    ></html:label>
+    <html:input
+      type="text"
+      id="zotero-prefpane-synapse-template-default"
+      preference="extensions.synapse.template.default"
+      flex="1"
+      placeholder="default.md"
+    ></html:input>
+  </hbox>
+  <!-- 已移除：独立模板文件名设置 / Removed: standalone template filename -->
+  <!-- standalone template UI removed -->
+
+  <!-- 已移除：独立文件名前后缀设置 / Removed: standalone filename prefix/suffix -->
+  <!-- standalone prefix/suffix UI removed -->
+  <hbox align="center" pack="start">
+    <html:label
+      for="zotero-prefpane-synapse-filename-template"
+      data-l10n-id="synapse-pref-filename-template"
+    ></html:label>
+    <html:input
+      type="text"
+      id="zotero-prefpane-synapse-filename-template"
+      preference="extensions.synapse.filename.template"
+      flex="1"
+      placeholder="{{title}}.md"
+    ></html:input>
+  </hbox>
+
+  <!-- HTML → Markdown / HTML 转 Markdown 规则 -->
+  <label><html:h3 data-l10n-id="synapse-pref-html2md-section"></html:h3></label>
+  <vbox>
+    <checkbox
+      id="zotero-prefpane-synapse-html-strong"
+      preference="extensions.synapse.html.strong"
+      data-l10n-id="synapse-pref-html-strong"
+    />
+    <checkbox
+      id="zotero-prefpane-synapse-html-em"
+      preference="extensions.synapse.html.em"
+      data-l10n-id="synapse-pref-html-em"
+    />
+    <checkbox
+      id="zotero-prefpane-synapse-html-strikethrough"
+      preference="extensions.synapse.html.strikethrough"
+      data-l10n-id="synapse-pref-html-strikethrough"
+    />
+    <checkbox
+      id="zotero-prefpane-synapse-html-underline"
+      preference="extensions.synapse.html.underline"
+      data-l10n-id="synapse-pref-html-underline"
+    />
+    <checkbox
+      id="zotero-prefpane-synapse-html-bullet"
+      preference="extensions.synapse.html.bullet"
+      data-l10n-id="synapse-pref-html-bullet"
+    />
+  </vbox>
+
+  <!-- Frontmatter / Frontmatter 设置 -->
+  <label><html:h3 data-l10n-id="synapse-pref-frontmatter-section"></html:h3></label>
+  <vbox>
+    <checkbox
+      id="zotero-prefpane-synapse-frontmatter-enabled"
+      preference="extensions.synapse.frontmatter.enabled"
+      data-l10n-id="synapse-pref-frontmatter-enabled"
+    />
+    <hbox align="center" pack="start">
+      <html:label
+        for="zotero-prefpane-synapse-frontmatter-format"
+        data-l10n-id="synapse-pref-frontmatter-format"
+      ></html:label>
+      <menulist
+        id="zotero-prefpane-synapse-frontmatter-format"
+        preference="extensions.synapse.frontmatter.format"
+      >
+        <menupopup>
+          <menuitem value="yaml" label="yaml" />
+        </menupopup>
+      </menulist>
+    </hbox>
+    <hbox align="center" pack="start">
+      <html:label
+        for="zotero-prefpane-synapse-frontmatter-fields"
+        data-l10n-id="synapse-pref-frontmatter-fields"
+      ></html:label>
+      <html:input
+        type="text"
+        id="zotero-prefpane-synapse-frontmatter-fields"
+        preference="extensions.synapse.frontmatter.fields"
+        flex="1"
+        placeholder="title,authors,year,tags,DOI,URL"
+      ></html:input>
+    </hbox>
+  </vbox>
+
+  <!-- Obsidian integration / Obsidian 集成 -->
+  <label><html:h3 data-l10n-id="synapse-pref-obsidian-section"></html:h3></label>
+  <vbox>
+    <checkbox
+      id="zotero-prefpane-synapse-obsidian-attach-uri"
+      preference="extensions.synapse.obsidian.attach_obsidian_uri"
+      data-l10n-id="synapse-pref-obsidian-attach-uri"
+    />
+    <checkbox
+      id="zotero-prefpane-synapse-obsidian-block-ids"
+      preference="extensions.synapse.obsidian.block_ids"
+      data-l10n-id="synapse-pref-obsidian-block-ids"
+    />
+    <hbox align="center" pack="start">
+      <html:label
+        for="zotero-prefpane-synapse-obsidian-vault"
+        data-l10n-id="synapse-pref-obsidian-vault"
+      ></html:label>
+      <html:input
+        type="text"
+        id="zotero-prefpane-synapse-obsidian-vault"
+        preference="extensions.synapse.obsidian.vault"
+        flex="1"
+      ></html:input>
+    </hbox>
+    <hbox align="center" pack="start">
+      <html:label
+        for="zotero-prefpane-synapse-obsidian-dir"
+        data-l10n-id="synapse-pref-obsidian-dir"
+      ></html:label>
+      <html:input
+        type="text"
+        id="zotero-prefpane-synapse-obsidian-dir"
+        preference="extensions.synapse.obsidian.dir"
+        flex="1"
+      ></html:input>
+    </hbox>
+  </vbox>
+</groupbox>
+<vbox>
+  <html:label
+    data-l10n-id="synapse-pref-help"
+    data-l10n-args='{"time": "2025-11-02 21:14:14","name": "Synapse","version":"1.0.5"}'
+  ></html:label>
+</vbox>

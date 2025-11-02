@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Synapse",
+  "version": "1.0.5",
+  "description": "Synapse for Zotero 8: Create mdnotes file, templates, and Obsidian integration",
+  "homepage_url": "https://github.com/BCS1037/synapse",
+  "author": "BCS1037",
+  "icons": {
+    "48": "content/icons/synapse-logo.a.svg",
+    "96": "content/icons/synapse-logo.a.svg",
+    "128": "content/icons/synapse-logo.a.svg"
+  },
+  "applications": {
+    "zotero": {
+      "id": "synapse@bcs1037.github.io",
+      "update_url": "https://raw.githubusercontent.com/BCS1037/synapse/main/update.json",
+      "strict_min_version": "7.0",
+      "strict_max_version": "8.*"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "addons": {
+    "synapse@bcs1037.github.io": {
+      "updates": [
+        {
+          "version": "1.0.5",
+          "update_link": "https://github.com/BCS1037/synapse/releases/download/v1.0.5/synapse.xpi",
+          "update_hash": "sha512:1f239310d6034d28c7b9656d0b050036e32457d2d82d6854d0de19904373cb42a81c6c5d9a8c2243ffaeb1ff68f95ada36fe4a01d16b8249cac17d64854dc870",
+          "applications": {
+            "zotero": {
+              "strict_min_version": "7.0",
+              "strict_max_version": "8.*"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

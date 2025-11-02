@@ -1,0 +1,19 @@
+{
+  "extends": "zotero-types/entries/sandbox/",
+  "compilerOptions": {
+    // 允许从 JSON 文件导入（用于 import config from "../../package.json"）
+    // Allow importing from JSON files
+    "resolveJsonModule": true,
+    // 使用 NodeNext 模块与解析以兼容 ESM
+    // Use NodeNext module and resolution for ESM compatibility
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    // 目标 Firefox ESR 115 对应的 ECMAScript 版本
+    // Target ES2022 to match Firefox ESR 115 capabilities
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "skipLibCheck": true
+  },
+  "include": ["src", "typings"],
+  "exclude": ["build", "addon"]
+}

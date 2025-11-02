@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>mdnotes 偏好页预览（静态）</title>
+  <!-- 仅用于预览：复用 Zotero 面板样式，实际运行由 Zotero 注入 -->
+  <!-- 移除外部 CSS：原 <link rel="stylesheet" href="../../addon/content/zoteroPane.css" /> 会在静态服务器下 404 -->
+  <style>
+    /* 预览专用微调，不影响真实偏好页 */
+    body { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; padding: 16px; }
+    .groupbox { border: 1px solid #ddd; border-radius: 8px; padding: 12px; }
+    h2, h3 { margin: 8px 0; }
+    .row { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+    .row label { min-width: 220px; }
+    .row input[type="text"] { flex: 1; padding: 6px 8px; }
+    .col { display: flex; flex-direction: column; gap: 6px; }
+  </style>
+</head>
+<body>
+  <div class="groupbox">
+    <h2>Create mdnotes file 设置预览</h2>
+
+    <!-- 导出目录与模板 -->
+    <div class="row">
+      <label for="pref-directory">导出目录</label>
+      <input type="text" id="pref-directory" placeholder="/Users/you/Notes" />
+      <button>选择…</button>
+    </div>
+    <div class="row">
+      <label for="pref-templates-directory">模板目录</label>
+      <input type="text" id="pref-templates-directory" placeholder="/Users/you/Templates" />
+      <button>选择…</button>
+    </div>
+
+    <!-- 模板文件名设置 -->
+    <div class="row">
+      <label for="pref-template-default">默认模板文件名</label>
+      <input type="text" id="pref-template-default" placeholder="default.md" />
+    </div>
+    <div class="row">
+      <label for="pref-filename-template">文件名模板</label>
+      <input type="text" id="pref-filename-template" placeholder="{{title}}.md" />
+    </div>
+
+    <!-- HTML→Markdown 规则 -->
+    <h3>HTML → Markdown 规则</h3>
+    <div class="col">
+      <label><input type="checkbox" checked /> strong → **bold**</label>
+      <label><input type="checkbox" checked /> em → *italic*</label>
+      <label><input type="checkbox" /> strikethrough → ~~del~~</label>
+      <label><input type="checkbox" /> underline → _underline_</label>
+      <label><input type="checkbox" checked /> bullet → - list item</label>
+    </div>
+
+    <!-- Frontmatter 设置 -->
+    <h3>Frontmatter</h3>
+    <div class="col">
+      <label><input type="checkbox" checked /> 启用 frontmatter</label>
+      <div class="row">
+        <label for="pref-frontmatter-format">格式</label>
+        <select id="pref-frontmatter-format">
+          <option value="yaml" selected>yaml</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="pref-frontmatter-fields">字段</label>
+        <input type="text" id="pref-frontmatter-fields" placeholder="title,authors,year,tags,DOI,URL" />
+      </div>
+    </div>
+
+    <!-- Obsidian 集成 -->
+    <h3>Obsidian 集成</h3>
+    <div class="col">
+      <label><input type="checkbox" /> 附加 obsidian:// URI</label>
+      <label><input type="checkbox" /> 生成块 ID（block ids）</label>
+      <div class="row">
+        <label for="pref-obsidian-vault">Vault 名称</label>
+        <input type="text" id="pref-obsidian-vault" placeholder="MyVault" />
+      </div>
+      <div class="row">
+        <label for="pref-obsidian-dir">Obsidian 目录</label>
+        <input type="text" id="pref-obsidian-dir" placeholder="Notes/mdnotes" />
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top:12px;color:#666;">提示：此页面仅用于视觉预览，真实偏好交互（本地化/存储/事件）由 Zotero 环境提供。</p>
+</body>
+</html>

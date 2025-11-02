@@ -1,0 +1,72 @@
+{
+  "name": "Synapse",
+  "type": "module",
+  "version": "1.0.5",
+  "description": "Synapse for Zotero 8: Create mdnotes file, templates, and Obsidian integration",
+  "config": {
+    "addonName": "Synapse",
+    "addonID": "synapse@bcs1037.github.io",
+    "addonRef": "synapse",
+    "addonInstance": "Synapse",
+    "prefsPrefix": "extensions.synapse"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BCS1037/synapse.git"
+  },
+  "author": "BCS1037",
+  "bugs": {
+    "url": "https://github.com/BCS1037/synapse/issues"
+  },
+  "homepage": "https://github.com/BCS1037/synapse",
+  "license": "AGPL-3.0-or-later",
+  "scripts": {
+    "start": "NO_UPDATE_NOTIFIER=1 zotero-start",
+    "build": "node -e \"try{require('fs').rmSync('gen/version.json')}catch(e){}\" && NO_UPDATE_NOTIFIER=1 zotero-plugin build && NO_UPDATE_NOTIFIER=1 zp-zipup .scaffold/build Synapse && node scripts/postbuild-clean.js && tsc --noEmit",
+    "lint:check": "prettier --check . && eslint .",
+    "lint:fix": "prettier --write . && eslint . --fix",
+    "release": "NO_UPDATE_NOTIFIER=1 zp-release",
+    "test": "NO_UPDATE_NOTIFIER=1 zotero-plugin test",
+    "update-deps": "npm update --save"
+  },
+  "dependencies": {
+    "sha.js": "^2.4.11",
+    "turndown": "^7.1.2",
+    "zotero-plugin-toolkit": "^5.1.0-beta.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.2.0",
+    "@zotero-plugin/eslint-config": "^0.6.7",
+    "chai": "^5.2.1",
+    "eslint": "^9.32.0",
+    "mocha": "^11.7.1",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2",
+    "zotero-plugin": "^6.4.0",
+    "zotero-plugin-scaffold": "^0.8.0",
+    "zotero-types": "^4.1.0-beta.1"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "endOfLine": "lf",
+    "overrides": [
+      {
+        "files": [
+          "*.xhtml"
+        ],
+        "options": {
+          "htmlWhitespaceSensitivity": "css"
+        }
+      }
+    ]
+  },
+  "zotero": {
+    "updateJSON": "",
+    "engines": {
+      "zotero": ">=7.0.0"
+    }
+  }
+}

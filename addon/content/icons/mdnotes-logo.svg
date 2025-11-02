@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Synapse (former mdnotes) icon: flat #F2F2F2 background + uppercase M -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Synapse Icon">
+  <!-- Background / 纯色背景 -->
+  <rect x="0" y="0" width="128" height="128" fill="#F2F2F2"/>
+  <!-- Letter M / 居中放大的大写 M -->
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, PingFang SC, Noto Sans CJK SC, Hiragino Sans GB, Microsoft YaHei, sans-serif"
+        font-size="84" font-weight="700" fill="#111111" letter-spacing="1">
+    M
+  </text>
+</svg>

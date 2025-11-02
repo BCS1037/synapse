@@ -1,0 +1,189 @@
+<linkset>
+  <html:link rel="localization" href="__addonRef__-preferences.ftl" />
+  <!-- Added stylesheet link for external preview; 在外部预览环境下加载本地样式表 -->
+  <html:link rel="stylesheet" href="zoteroPane.css" />
+</linkset>
+<groupbox
+  onload="Zotero.__addonInstance__.hooks.onPrefsEvent('load', { window });"
+>
+  <label><html:h2 data-l10n-id="pref-title"></html:h2></label>
+
+  <!-- Directory & templates / 导出目录与模板 -->
+  <hbox align="center" pack="start">
+    <html:label
+      for="zotero-prefpane-__addonRef__-directory"
+      data-l10n-id="pref-directory"
+    ></html:label>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-directory"
+      preference="directory"
+      flex="1"
+    ></html:input>
+    <button
+      id="zotero-prefpane-__addonRef__-choose-dir"
+      data-l10n-id="pref-choose-dir"
+    />
+  </hbox>
+  <hbox align="center" pack="start">
+    <html:label
+      for="zotero-prefpane-__addonRef__-templates-dir"
+      data-l10n-id="pref-templates-directory"
+    ></html:label>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-templates-dir"
+      preference="templates.directory"
+      flex="1"
+    ></html:input>
+    <button
+      id="zotero-prefpane-__addonRef__-choose-templates-dir"
+      data-l10n-id="pref-choose-dir"
+    />
+  </hbox>
+
+  <!-- Template file names / 模板文件名设置 -->
+  <hbox align="center" pack="start">
+    <html:label
+      for="zotero-prefpane-__addonRef__-template-default"
+      data-l10n-id="pref-template-default"
+    ></html:label>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-template-default"
+      preference="template.default"
+      flex="1"
+      placeholder="default.md"
+    ></html:input>
+  </hbox>
+  <!-- 已移除：独立模板文件名设置 / Removed: standalone template filename -->
+  <!-- standalone template UI removed -->
+
+  <!-- 已移除：独立文件名前后缀设置 / Removed: standalone filename prefix/suffix -->
+  <!-- standalone prefix/suffix UI removed -->
+  <hbox align="center" pack="start">
+    <html:label
+      for="zotero-prefpane-__addonRef__-filename-template"
+      data-l10n-id="pref-filename-template"
+    ></html:label>
+    <html:input
+      type="text"
+      id="zotero-prefpane-__addonRef__-filename-template"
+      preference="filename.template"
+      flex="1"
+      placeholder="{{title}}.md"
+    ></html:input>
+  </hbox>
+
+  <!-- HTML → Markdown / HTML 转 Markdown 规则 -->
+  <label><html:h3 data-l10n-id="pref-html2md-section"></html:h3></label>
+  <vbox>
+    <checkbox
+      id="zotero-prefpane-__addonRef__-html-strong"
+      preference="html.strong"
+      data-l10n-id="pref-html-strong"
+    />
+    <checkbox
+      id="zotero-prefpane-__addonRef__-html-em"
+      preference="html.em"
+      data-l10n-id="pref-html-em"
+    />
+    <checkbox
+      id="zotero-prefpane-__addonRef__-html-strikethrough"
+      preference="html.strikethrough"
+      data-l10n-id="pref-html-strikethrough"
+    />
+    <checkbox
+      id="zotero-prefpane-__addonRef__-html-underline"
+      preference="html.underline"
+      data-l10n-id="pref-html-underline"
+    />
+    <checkbox
+      id="zotero-prefpane-__addonRef__-html-bullet"
+      preference="html.bullet"
+      data-l10n-id="pref-html-bullet"
+    />
+  </vbox>
+
+  <!-- Frontmatter / Frontmatter 设置 -->
+  <label><html:h3 data-l10n-id="pref-frontmatter-section"></html:h3></label>
+  <vbox>
+    <checkbox
+      id="zotero-prefpane-__addonRef__-frontmatter-enabled"
+      preference="frontmatter.enabled"
+      data-l10n-id="pref-frontmatter-enabled"
+    />
+    <hbox align="center" pack="start">
+      <html:label
+        for="zotero-prefpane-__addonRef__-frontmatter-format"
+        data-l10n-id="pref-frontmatter-format"
+      ></html:label>
+      <menulist
+        id="zotero-prefpane-__addonRef__-frontmatter-format"
+        preference="frontmatter.format"
+      >
+        <menupopup>
+          <menuitem value="yaml" label="yaml" />
+        </menupopup>
+      </menulist>
+    </hbox>
+    <hbox align="center" pack="start">
+      <html:label
+        for="zotero-prefpane-__addonRef__-frontmatter-fields"
+        data-l10n-id="pref-frontmatter-fields"
+      ></html:label>
+      <html:input
+        type="text"
+        id="zotero-prefpane-__addonRef__-frontmatter-fields"
+        preference="frontmatter.fields"
+        flex="1"
+        placeholder="title,authors,year,tags,DOI,URL"
+      ></html:input>
+    </hbox>
+  </vbox>
+
+  <!-- Obsidian integration / Obsidian 集成 -->
+  <label><html:h3 data-l10n-id="pref-obsidian-section"></html:h3></label>
+  <vbox>
+    <checkbox
+      id="zotero-prefpane-__addonRef__-obsidian-attach-uri"
+      preference="obsidian.attach_obsidian_uri"
+      data-l10n-id="pref-obsidian-attach-uri"
+    />
+    <checkbox
+      id="zotero-prefpane-__addonRef__-obsidian-block-ids"
+      preference="obsidian.block_ids"
+      data-l10n-id="pref-obsidian-block-ids"
+    />
+    <hbox align="center" pack="start">
+      <html:label
+        for="zotero-prefpane-__addonRef__-obsidian-vault"
+        data-l10n-id="pref-obsidian-vault"
+      ></html:label>
+      <html:input
+        type="text"
+        id="zotero-prefpane-__addonRef__-obsidian-vault"
+        preference="obsidian.vault"
+        flex="1"
+      ></html:input>
+    </hbox>
+    <hbox align="center" pack="start">
+      <html:label
+        for="zotero-prefpane-__addonRef__-obsidian-dir"
+        data-l10n-id="pref-obsidian-dir"
+      ></html:label>
+      <html:input
+        type="text"
+        id="zotero-prefpane-__addonRef__-obsidian-dir"
+        preference="obsidian.dir"
+        flex="1"
+      ></html:input>
+    </hbox>
+  </vbox>
+</groupbox>
+<vbox>
+  <html:label
+    data-l10n-id="pref-help"
+    data-l10n-args='{"time": "__buildTime__","name": "__addonName__","version":"__buildVersion__"}'
+  ></html:label>
+</vbox>
