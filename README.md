@@ -56,7 +56,7 @@ doi: {{ DOI }}
 
 ## Compatibility
 
-- Supports Zotero 7/8; minimum `7.0`, up to `8.*` (see `update.json`).
+- Only Supports Zotero 8.
 - Cross-platform path handling and safe writes use Zotero official APIs (IOUtils/OS.File) with fallbacks.
 
 ## Install & Build
