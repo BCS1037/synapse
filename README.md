@@ -16,6 +16,10 @@ A simple Zotero plugin for exporting item metadata to Obsidian notes.
 
 ## Usage
 
+
+Back up before installation！！！
+Back up before installation！！！
+
 1. After installing the plugin, open `Preferences → Synapse` and configure:
    - `directory` (export directory)
    - `templates.directory` and `template.default`
@@ -26,6 +30,10 @@ A simple Zotero plugin for exporting item metadata to Obsidian notes.
 3. After export:
    - A corresponding `.md` file is generated or updated in the specified directory;
    - If “Create child note link” is enabled, the item will have a child “Link to URL” attachment pointing to `file:///.../xxx.md`.
+
+
+> If the plugin doesn’t appear after installation, restart Zotero.
+
 
 ### Example Template (copy into your template file)
 
